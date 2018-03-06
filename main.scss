@@ -1,0 +1,95 @@
+$font-title: 'Nanum Brush Script',
+cursive;
+$font-text: 'Lobster',
+cursive;
+@mixin border-radius($radius) {
+    -webkit-border0radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius
+}
+
+@mixin square-image($ph, $pw) {
+    width: $pw;
+    height: $ph;
+}
+
+body {
+    background-image: url(Images/richard-loader-31932-unsplash.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    color: yellow;
+    .overlay {
+        z-index: -1;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .3);
+    }
+    .blood-overlayo {
+        display: none;
+    }
+    #title {
+        text-align: center;
+    }
+    nav {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            li {
+                display: inline-block;
+                width: 60px;
+                padding: 10px;
+                font-family: 'Nanum Brush Script', cursive;
+                font-size: 20px;
+            }
+            a {
+                text-decoration: none;
+                color: yellow;
+            }
+        }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $font-title;
+    }
+    p {
+        font-family: $font-text;
+        font-style: oblique;
+    }
+    .s-text {
+        display: none;
+    }
+    .open {}
+    .image {
+        display: none;
+        @include border-radius(10px);
+        @include square-image(250px, 275px);
+    }
+    .image2 {
+        @include border-radius(10px);
+        @include square-image(250px, 275px);
+    }
+    .click-text {
+        left: 300px;
+        top: -150px;
+        position: relative;
+    }
+    .blood-overlay {
+        z-index: -1;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .3);
+        background-image: url(Images/running-blood.jpg);
+    }
+}
